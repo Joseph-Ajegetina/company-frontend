@@ -1,0 +1,19 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "Displays company data such as employee information",
+  "main": "index.js",
+  "scripts": {
+    "develop": "node index.js"
+  },
+  "author": "Joseph Ajegetina Ajongba",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "multer": "^1.4.5-lts.1"
+  }
+}
