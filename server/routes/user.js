@@ -1,27 +1,16 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const userController = require('../controllers/userController');
-
-
+const employeeController = require("../controllers/userController");
 
 // routes
-router.get('/', userController.viewall);
-router.post('/', userController.find);
+router.get("/", employeeController.viewall);
+router.post("/", employeeController.filter);
 
-router.post('/sort', userController.sort);
+router.get("/upload", employeeController.uploadForm);
 
-router.get('/adduser', userController.form);
-router.post('/adduser', userController.create);
+router.get("/addEmployee", employeeController.employeeForm);
+router.post("/addEmployee", employeeController.create);
 
-router.get('/edituser/:id', userController.edit);
-router.post('/edituser/:id', userController.update);
-
-router.get('/viewuser/:id', userController.view);
-router.get('/:id',userController.delete);
-
-
-
-
-
+router.get("/:id", employeeController.remove)
 
 module.exports = router;

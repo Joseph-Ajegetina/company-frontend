@@ -1,0 +1,46 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page"> Upload File</li>
+  </ol>
+</nav>
+
+{{#if alert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{alert}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<form id="formFiles" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
+
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="file" class="form-control"
+        name="file">
+    </div>
+  </div>
+  <div class="col-12 d-grid">
+    <button class="btn btn-primary" type="submit">Upload</button>
+  </div>
+  <h2 id="fetch_data"></h2>
+</form>
+<script>
+  let form = document.querySelector('#formFiles'),
+    h2 = document.querySelector('#fetch_data')
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch('http://localhost:5000/api/v1/employees/file', {
+      method: 'POST',
+      mode:"no-cors",
+      body: new FormData(form)
+    })
+      .then( response => {
+        window.location.href = "/"
+      })
+      .catch(err => {
+        console.log(new Error(err.message))
+        h2.textContent = 'there was a problem uploading your data :('
+      })
+  })
+</script>

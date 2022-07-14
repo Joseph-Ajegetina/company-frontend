@@ -1,7 +1,5 @@
 <div class="services">
   <div class="container">
-
-
   </div>
 </div>
 {{#if removedUser}}
@@ -13,17 +11,7 @@
 
 <div class="row mb-3">
   <div class="col-3 justify-content-center">
-    <h1>Users</h1>
-  </div>
-  <div class="col-3 justify-content-center">
-    <form class="d-flex" method="POST" action="/sort" novalidate>
-      <select name="sort">
-        <option value="name">name</option>
-        <option value="surname">surname</option>
-
-      </select>
-      <button class="btn btn-outline-success" type="submit">sort</button>
-    </form>
+    <h1>Employees</h1>
   </div>
   <div class="col-3">
     <form class="d-flex" method="POST" action="/" novalidate>
@@ -36,7 +24,10 @@
 
 
   <div class="col-3 d-flex justify-content-end">
-    <a href="/adduser" type="button" class="btn btn-primary align-self-center">+ add user</a>
+    <a href="/addEmployee" type="button" class="btn btn-primary align-self-center">+ add user</a>
+  </div>
+    <div class="col-3 d-flex justify-content-end">
+    <a href="/upload" type="button" class="btn btn-secondary align-self-center">upload</a>
   </div>
 </div>
 
@@ -57,7 +48,7 @@
   </thead>
   <tbody>
 
-    {{#each users}}
+    {{#each employees}}
     <tr>
       {{!-- <th scope="row">{{this.id}}</th> --}}
       <td>{{this.name}}</td>
@@ -65,9 +56,10 @@
       <td>{{this.address}}</td>
       <td>{{this.phone}}</td>
       <td>{{this.email}}</td>
-      <td>{{this.birthdate}}</td>
+      <td>{{this.dob}}</td>
       <td class="text-end">
-        {{!-- <a href="/viewuser/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i> View</a>
+        {{!-- <a href="/viewuser/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i>
+          View</a>
         <a href="/edituser/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i>
           Edit</a> --}}
         <a href="/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i> Delete</a>
