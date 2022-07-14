@@ -17,7 +17,10 @@ Uploading a file with employee data to be added to the repository
 ## install necessary dependencies
 #### npm i 
 ## start the server (frontend)
-#### node start
+#### node index.js
+
+## Visit the url on the assigned port to access the web interface
+e.g http://localhost:3000
 
 
 
