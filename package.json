@@ -4,7 +4,8 @@
   "description": "Displays company data such as employee information",
   "main": "index.js",
   "scripts": {
-    "develop": "node index.js"
+    "develop": "nodemon index.js",
+    "start":"node index.js"
   },
   "author": "Joseph Ajegetina Ajongba",
   "license": "ISC",
